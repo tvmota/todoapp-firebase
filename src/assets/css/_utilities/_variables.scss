@@ -1,0 +1,29 @@
+@import '_functions';
+
+//Váriavel de font-base
+$basefontsize: 16 !default;
+
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-dark: #323a45;
+$color-dark-lighter: #839090;
+$color-dark-darker: #2C2F3D;
+$color-light: #cacaca;
+
+$color-primary: #1565c0;
+$color-primary-light: #5e92f3;
+$color-primary-dark: #003c8f;
+$color-primary-text-light: $color-white;
+$color-primary-text-dark: $color-black;
+
+$color-secondary: #9e9e9e;
+$color-secondary-light: #9e9e9e;
+$color-secondary-dark: #707070;
+$color-secondary-text-light: $color-white;
+$color-secondary-text-dark: $color-black;
+
+$color-danger: #f47b7b;
+
+$color-bg-shadow: rgba(0, 0, 0, .5);
+//$color-shadow: rgba(64,154,133, 0);

@@ -1,0 +1,102 @@
+@import '../_utilities/_variables';
+@import '../_utilities/_functions';
+@import '../_modules/_icons';
+
+@keyframes donut-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.auth {
+  align-items: center;
+  background: $color-bg-shadow;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+
+  &-container {
+    align-items: center;
+    display: flex;
+    flex: 0 0 50%;
+    flex-direction: column;
+    padding: pxToRem(10);
+    max-width: pxToRem(400);
+
+    &--header {
+      align-items: center;
+      align-self: stretch;
+      border-bottom: pxToRem(4) solid $color-white;
+      color: $color-white;
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: pxToRem(14);
+      margin-bottom: pxToRem(26);
+    }
+
+    &--body {
+      align-self: stretch;
+      color: $color-white;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      a {
+        color: $color-white;
+
+        &:hover {
+          color: $color-primary-light;
+        }
+      }
+
+      input {
+        border-radius: pxToRem(4);
+        color: $color-black;
+        font-size: pxToRem(14);
+        font-weight: 900;
+        padding: pxToRem(16) pxToRem(10);
+        margin-bottom: pxToRem(8);
+
+        &::selection {
+          background: $color-primary;
+          color: $color-secondary-text-light;
+        }
+
+        &::-moz-selection {
+          background: $color-primary;
+          color: $color-secondary-text-light;
+        }
+      }
+    }
+
+    @media(max-width: 568px) {
+      flex: 0 0 80%;
+    }
+  }
+
+  .form-error {
+    color: $color-danger;
+    font-size: pxToRem(13);
+    font-weight: 900;
+    padding-bottom: pxToRem(8);
+    text-align: left;
+    visibility: hidden;
+
+    &--invalid {
+      visibility: visible;
+    }
+  }
+}
+
+.donut {
+  display: inline-block;
+  border: 6px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #cacaca;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: donut-spin 1.2s linear infinite;
+}
