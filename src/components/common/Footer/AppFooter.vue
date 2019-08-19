@@ -7,7 +7,7 @@ export default {
   <footer class="container-footer" role="contentinfo">
     <a
       class="container-footer--link"
-      href="#"
+      href="Https://github.com/tvmota"
       target="_blank"
       title="Codigo fonte">
         GitHub
