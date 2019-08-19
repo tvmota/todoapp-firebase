@@ -1,5 +1,8 @@
 <script>
 import { mapGetters } from 'vuex';
+import { Howl } from 'howler';
+import dangersound from '../../../assets/sounds/alarm.wav';
+import warnsound from '../../../assets/sounds/warn.wav';
 // eslint-disable-next-line
 import closeIcon from '../../../assets/img/icons/cancel.svg?sprite';
 import alerts from '../../../utils/alerts';
@@ -10,6 +13,10 @@ export default {
   data() {
     return {
       closeIcon,
+      sound: {
+        dangerAlarm: {},
+        warnAlarm: {},
+      },
     };
   },
   computed: {
@@ -24,6 +31,17 @@ export default {
         }
       });
     },
+    playAlarm(todoItem) {
+      if (todoItem.diff_days < 2) {
+        this.sound.warnAlarm.stop();
+        this.sound.dangerAlarm.play();
+      }
+
+      if (todoItem.diff_days > 1 && todoItem.diff_days <= 8) {
+        this.sound.dangerAlarm.stop();
+        this.sound.warnAlarm.play();
+      }
+    },
     removeTodoItem(id) {
       db.removeItem(id).then(() => {
         this.$store.dispatch('updateStsLoader', false);
@@ -34,6 +52,17 @@ export default {
         console.log(err);
       });
     },
+  },
+  mounted() {
+    this.sound.dangerAlarm = new Howl({
+      src: dangersound,
+      volume: 0.7,
+    });
+
+    this.sound.warnAlarm = new Howl({
+      src: warnsound,
+      volume: 0.7,
+    });
   },
 };
 </script>
@@ -50,7 +79,8 @@ export default {
           class="todo-list-item c-hand"
           :class="todo.cls"
           v-for="todo in getToDoList"
-          :key="todo.id">
+          :key="todo.id"
+          @mouseover="playAlarm(todo)">
             <h2 class="todo-list-item--head">
               {{ todo.title }}
               <div class="sub-header">

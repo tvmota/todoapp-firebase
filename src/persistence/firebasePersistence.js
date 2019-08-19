@@ -1,9 +1,8 @@
 import dayjs from 'dayjs';
 import db from '../firebaseInit';
 
-const uid = window.sessionStorage.getItem('userUid');
-
 const getAllItens = async () => {
+  const uid = window.sessionStorage.getItem('userUid');
   const itens = [];
   const resp = await db.collection('todoItens').where('user_id', '==', uid).get();
 

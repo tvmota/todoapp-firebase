@@ -12,6 +12,7 @@
     "core-js": "^2.6.5",
     "dayjs": "^1.8.15",
     "firebase": "^6.3.5",
+    "howler": "^2.1.2",
     "inputmask": "^4.0.8",
     "pikaday": "^1.8.0",
     "register-service-worker": "^1.6.2",

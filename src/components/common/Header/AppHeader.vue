@@ -16,6 +16,7 @@ export default {
   methods: {
     logout() {
       firebase.auth().signOut().then(() => {
+        window.sessionStorage.clear();
         this.$router.replace('login');
       });
     },
