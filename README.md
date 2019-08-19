@@ -2,7 +2,7 @@
 
 Projeto todoapp com integração no com firebase/auth e firestore
 
-## [DEMO](todoappfire.netlify.com)
+## [DEMO](https://todoappfire.netlify.com)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/387281a1-22d0-431e-83c4-d6724e5086f6/deploy-status)](https://app.netlify.com/sites/happy-kalam-8e06e6/deploys)
 
 ## Instruções de para instalação das dependncias
