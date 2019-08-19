@@ -17,7 +17,7 @@ const authMixin = {
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then((user) => {
-          console.log(user);
+          window.sessionStorage.setItem('userUid', user.user.uid);
           this.$router.push('/app');
         }, (err) => {
           alerts.alertError('Não foi possível fazer o login', 'Erro');

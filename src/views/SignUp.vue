@@ -1,10 +1,13 @@
 <script>
+// eslint-disable-next-line
+import addUser from '../assets/img/icons/add-user.svg?sprite';
 import authMixin from '../mixins/Auth';
 
 export default {
   name: 'App-sign-up',
   data() {
     return {
+      addUser,
       frmOrigin: 'signup',
     };
   },
@@ -17,7 +20,12 @@ export default {
 <template>
   <div class="auth">
     <div class="auth-container">
-      <h1 class="auth-container--header">Criar uma nova conta</h1>
+      <div class="auth-container--header">
+        <svg class="icone icone-xl--1 icone-primary" role="presentation">
+          <use :xlink:href="'#' + addUser.id"></use>
+        </svg>
+        <h1>Nova Conta</h1>
+      </div>
       <form
         class="auth-container--body"
         name="frmSignup"

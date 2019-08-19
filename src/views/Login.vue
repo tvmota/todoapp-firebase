@@ -1,6 +1,6 @@
 <script>
 // eslint-disable-next-line
-import loginIcon from '../assets/img/icons/to-do-list.svg?sprite';
+import loginIcon from '../assets/img/icons/login.svg?sprite';
 import authMixin from '../mixins/Auth';
 
 export default {
@@ -21,7 +21,7 @@ export default {
   <div class="auth">
     <div class="auth-container">
       <div class="auth-container--header">
-        <svg class="icone icone-xl--1 icone-light" role="presentation">
+        <svg class="icone icone-xl--1 icone-primary" role="presentation">
           <use :xlink:href="'#' + loginIcon.id"></use>
         </svg>
         <h1>To do App</h1>
